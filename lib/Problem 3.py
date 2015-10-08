@@ -6,5 +6,4 @@ def highest_factorial(num):
         counter += 1
     return num
 
-
 print highest_factorial(num=600851475143)
