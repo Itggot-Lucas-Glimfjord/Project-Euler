@@ -24,3 +24,5 @@ def smallest_multiple(max):
 
 
 
+
+
