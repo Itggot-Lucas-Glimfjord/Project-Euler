@@ -28,6 +28,7 @@ def smallest_multiple(max):
 
 
 
+
 smallest_multiple(20)
 
 
