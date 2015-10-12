@@ -20,7 +20,8 @@ def smallest_multiple(max):
         curr +=1
 
         for key in factors.keys():
-            if smallest_mult.has_key(key):
+            if smallest_mult.has_key(key) and smallest_mult[key] < factors[key]:
+                smallest_mult[key] = factors[key]-smallest_mult[key]
 
 
 
