@@ -14,6 +14,7 @@ def factor(num, factorial={}):
 
 def smallest_multiple(max):
     smallest_mult = {}
+    output = 1
     curr = 2
     while curr<=max:
         factors = factor(num=curr, factorial={})
@@ -22,6 +23,13 @@ def smallest_multiple(max):
         for key in factors.keys():
             if smallest_mult.has_key(key) and smallest_mult[key] < factors[key]:
                 smallest_mult[key] = factors[key]-smallest_mult[key]
+            else:
+                smallest_mult[key] = factors[key]
+
+    for key in smallest_mult:
+        output *= int(key)*smallest_mult[key]
+
+    return output
 
 
 
@@ -29,7 +37,7 @@ def smallest_multiple(max):
 
 
 
-smallest_multiple(20)
+print smallest_multiple(20)
 
 
 
