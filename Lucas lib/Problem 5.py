@@ -12,6 +12,7 @@ def factor(num, factorial={}):
 
     return factorial
 
+
 def smallest_multiple(max):
     smallest_mult = {}
     output = 1
