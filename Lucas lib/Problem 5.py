@@ -32,11 +32,6 @@ def smallest_multiple(max):
     return output
 
 
-
-
-
-
-
 print smallest_multiple(20)
 
 
