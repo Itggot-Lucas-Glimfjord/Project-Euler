@@ -1,5 +1,3 @@
-__author__ = 'lucas.glimfjord'
-
 numbers = [[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8], \
            [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0], \
            [81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30, 3, 49, 13, 36, 65], \
@@ -25,34 +23,36 @@ numbers = [[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91,
 def biggest_product(numbers):
     def side(x, y):
         output = []
-        if x+3 > len(numbers):
+        if x+3 < len(numbers[y]):
             for i in range(4):
-                if output.append(numbers[y][x + i])
+                output.append(numbers[y][x + i])
             return output
-        return 1
+        return [1]
 
     def d_right(x, y):
         output = []
-        for i in range(4):
-            output.append(numbers[y + i][x + i])
-        return output
+        if x+3 < len(numbers[y]) and y+3 < len(numbers):
+            for i in range(4):
+                output.append(numbers[y + i][x + i])
+            return output
+        return [1]
 
     def d_left(x, y):
         output = []
-        for i in range(4):
-            output.append(numbers[y + i][x - i])
-        return output
+        if y+3 < len(numbers):
+            for i in range(4):
+                output.append(numbers[y + i][x - i])
+            return output
+        return [1]
 
     def down(x, y):
         output = []
-        for i in range(4):
-            output.append(numbers[y + i][x])
-        return output
-
-    direction = {0: side,
-                 1: d_right,
-                 2: down,
-                 3: d_left}
+        if y+3 < len(numbers):
+            for i in range(4):
+                output.append(numbers[y + i][x])
+            return output
+        return [1]
+    direction = {0: side, 1: d_right, 2: down, 3: d_left}
     result = 0
     for y in range(20):
         for x in range(20):
