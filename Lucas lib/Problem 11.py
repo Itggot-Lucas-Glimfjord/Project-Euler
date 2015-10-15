@@ -25,9 +25,11 @@ numbers = [[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91,
 def biggest_product(numbers):
     def side(x, y):
         output = []
-        for i in range(4):
-            output.append(numbers[y][x + i])
-        return output
+        if x+3 > len(numbers):
+            for i in range(4):
+                if output.append(numbers[y][x + i])
+            return output
+        return 1
 
     def d_right(x, y):
         output = []
